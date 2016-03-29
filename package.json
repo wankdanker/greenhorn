@@ -1,0 +1,44 @@
+{
+  "name": "greenhorn",
+  "version": "1.0.0",
+  "description": "A simple server that renders HTML using various engines and a configuration file with test data",
+  "main": "index.js",
+  "dependencies": {
+    "concat-stream": "^1.5.1",
+    "debug": "^2.2.0",
+    "ejs": "^2.4.1",
+    "find-open-port": "^1.0.0",
+    "jade": "^1.11.0",
+    "once": "^1.3.3",
+    "optimist": "^0.6.1",
+    "templater": "^0.0.11",
+    "trimpath-template": "^2.0.0",
+    "usey": "^1.1.0",
+    "usey-http": "^0.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wankdanker/greenhorn.git"
+  },
+  "keywords": [
+    "outsource",
+    "test",
+    "view",
+    "data",
+    "template",
+    "development"
+  ],
+  "author": "Dan VerWeire",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wankdanker/greenhorn/issues"
+  },
+  "homepage": "https://github.com/wankdanker/greenhorn#readme",
+  "bin": {
+    "greenhorn" : "./index.js"
+  }
+}
