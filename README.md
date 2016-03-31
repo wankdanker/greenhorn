@@ -16,6 +16,13 @@ npm install -g greenhorn
 usage
 -----
 
+### Create a new directory
+
+```shell
+$ mkdir my-project
+$ cd my-project
+```
+
 ### Create a greenhorn.json file
 
 ```json
@@ -24,7 +31,19 @@ usage
 	"data" : {
 		"sku" : "12345",
 		"name" : "Thingamabob"
-	}
+	},
+	"static" : [{
+		"root" : "./static"
+	}],
+	"routes" : [{
+		"url" : "/customer",
+		"view" : "/customer/profile.ejs",
+		"data" : {
+			"customerCode" : "THINGAMABOBBERS",
+			"name" : "Thing-A-Ma-Bobbers",
+			"balance" : 42.00
+		}
+	}]
 }
 ```
 
@@ -32,6 +51,10 @@ usage
 
 ```shell
 $ greenhorn
+```
+With debugging information...
+```shell
+$ DEBUG=* greenhorn
 ```
 
 ### Develop your view
@@ -48,9 +71,6 @@ todo
 
 * add support for remote greenhorn.json
 * add support for specifying greenhorn.json path via argv
-* greenhorn.json
-	* add support for specified routes
-	* add support for static content
 * add web interface
 	* load remote greenhorn.json
 	* load a specific /path
