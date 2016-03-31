@@ -46,8 +46,11 @@ Open your browser to http://localhost:5000/test.jade
 todo
 ----
 
-* add support for remote greenhorn.json 
+* add support for remote greenhorn.json
 * add support for specifying greenhorn.json path via argv
+* greenhorn.json
+	* add support for specified routes
+	* add support for static content
 * add web interface
 	* load remote greenhorn.json
 	* load a specific /path
