@@ -10,6 +10,7 @@ var renderer = require('./lib/renderer');
 var logger = require('./lib/logger');
 var loadAppConfig = require('./lib/load-app-config');
 var getLocalConfig = require('./lib/get-local-config');
+var getDefaultConfig = require('./lib/get-default-config');
 
 var port = argv.port || process.env.PORT || 5000;
 var cwd = process.cwd();
@@ -30,8 +31,17 @@ startup.use(function (next) {
 
 	getLocalConfig(join(cwd, 'greenhorn.json'), function (err, config) {
 		if (err) {
-			debug(err);
-			return next();
+			if (err.code === "ENOENT") {
+				debug('no local greenhorn.json found.');
+			}
+			else {
+				debug(err);
+			}
+		}
+
+		if (!config) {
+			debug('no configuration available; applying default configuration');
+			config = getDefaultConfig();
 		}
 
 		loadAppConfig(horns, config, function (err) {
