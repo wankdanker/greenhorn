@@ -1,6 +1,6 @@
 {
   "name": "greenhorn",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "A simple server that renders HTML using various engines and a configuration file with test data",
   "main": "index.js",
   "dependencies": {
