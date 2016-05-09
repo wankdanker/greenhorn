@@ -8,11 +8,13 @@ var join = require('path').join;
 var debug = require('./lib/debug')
 var renderer = require('./lib/renderer');
 var logger = require('./lib/logger');
+var loadPlugins = require('./lib/load-plugins');
 var loadAppConfig = require('./lib/load-app-config');
 var getLocalConfig = require('./lib/get-local-config');
 var getDefaultConfig = require('./lib/get-default-config');
 
-var port = argv.port || process.env.PORT || 5000;
+var port = argv.l || argv.port || process.env.PORT || 5000;
+var plugins = (argv.p || argv.plugins || "").split(/,/gi);
 var cwd = process.cwd();
 
 var startup = Usey();
@@ -21,6 +23,9 @@ var horns = UseyServer();
 
 app.use(renderer())
 app.use(logger());
+
+loadPlugins(app, plugins);
+
 app.use(horns);
 app.use(UseyServer._404());
 
