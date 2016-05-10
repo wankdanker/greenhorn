@@ -14,7 +14,7 @@
     "templater": "^0.0.11",
     "trimpath-template": "^2.0.0",
     "usey": "^1.1.0",
-    "usey-http": "^0.3.0"
+    "usey-http": "^0.5.0"
   },
   "devDependencies": {},
   "scripts": {
